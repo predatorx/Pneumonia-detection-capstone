@@ -55,22 +55,6 @@ SEED = 42
 DEPTH = 3
 hyperparameters = {}
 
-early_stopping = callbacks.EarlyStopping(
-    monitor='val_loss',
-    patience=5,
-    min_delta=0,
-    restore_best_weights=True,
-)
-
-plateau = callbacks.ReduceLROnPlateau(
-    monitor='val_loss',
-    factor = 0.2,                                     
-    patience = 2,                                   
-    min_delt = 0,                                
-    cooldown = 0,                               
-    verbose = 1
-) 
-
 def reset_random_seeds():
    os.environ['PYTHONHASHSEED']=str(1)
    tf.random.set_seed(1)
